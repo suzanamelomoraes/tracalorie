@@ -14,3 +14,6 @@ const UICtrl = (function(){
 
 // App Controller
 
+const AppCtrl = (function(){
+   
+})();
