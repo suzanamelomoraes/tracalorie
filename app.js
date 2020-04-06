@@ -52,7 +52,9 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
     // Public methods
     return {
         init: function(){
-            console.log('Initializing App...')
+            // Fetch items from data structure (Item Controller)
+            const items = ItemCtrl.getItems();
+
         }
     }
    
