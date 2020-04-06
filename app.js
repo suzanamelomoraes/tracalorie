@@ -49,6 +49,8 @@ const UICtrl = (function(){
                             </a>
                         </li>`
             });
+            // Insert list items
+            document.querySelector('#item-list').innerHTML = html;
         }
     }
    
