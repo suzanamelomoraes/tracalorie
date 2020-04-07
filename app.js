@@ -26,6 +26,26 @@ const ItemCtrl = (function(){
        getItems: function(){
            return data.items;
        },
+       addItem: function(name, calories){
+        let ID;
+        // Generate ID
+        if(data.items.length > 0){
+            ID = data.items[data.items.length - 1].id + 1;
+        } else {
+            ID = 0;
+        }
+
+        // Calories (input as string) to number
+        calories = parseInt(calories);
+
+        // Create new Item
+        newItem = new Item(ID, name, calories);
+
+        // Add to items array
+        data.items.push(newItem);
+
+        return newItem;
+       },
        logData: function(){
            return data;
        }
