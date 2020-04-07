@@ -155,8 +155,13 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
             // Fetch items from data structure (Item Controller)
             const items = ItemCtrl.getItems();
 
+            // Check if there are any items
+            if(items.length === 0){
+                UICtrl.hideList();
+            } else {
             // Populate list with items
-            UICtrl.populateItemList(items);
+                UICtrl.populateItemList(items);
+            }
 
             // Load event listeners
             loadEventListeners();
