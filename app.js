@@ -78,6 +78,13 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
         document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
     }
 
+    // Add item submit
+    const itemAddSubmit = (e) => {
+        // get form input from UI Controller
+
+        e.preventDefault();
+    }
+
     // Public methods
     return {
         init: function(){
@@ -86,6 +93,9 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
 
             // Populate list with items
             UICtrl.populateItemList(items);
+
+            // Load event listeners
+            loadEventListeners();
         }
     }
    
