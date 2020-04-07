@@ -46,11 +46,13 @@ const UICtrl = (function(){
             let html = '';
 
             items.forEach(item => {
-                html += `<li class='collection-item' id='item-${item.id}'> <strong>${item.name}: </strong> <em>${item.calories} Calories</em> 
-                            <a href='#" class="secondary-content'> 
+                html += `<li class='collection-item' id='item-${item.id}'> 
+                            <strong>${item.name}: </strong> <em>${item.calories} Calories</em> 
+                            <a href='#' class='secondary-content'> 
                                 <i class='edit-item fa fa-pencil'></i> 
                             </a>
-                        </li>`
+                        </li>`;
+
             });
             // Insert list items
             document.querySelector(UISelectors.itemList).innerHTML = html;
@@ -63,6 +65,10 @@ const UICtrl = (function(){
 
 // App Controller
 const AppCtrl = (function(ItemCtrl, UICtrl){
+    // Load event listeners
+    const loadEventListeners = () => {
+        
+    }
 
     // Public methods
     return {
