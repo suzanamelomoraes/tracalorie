@@ -101,6 +101,11 @@ const UICtrl = (function(){
             // Insert item
             document.querySelector(UISelectors.itemList).insertAdjacentElement('beforeend', li);
         },
+        clearInput: function(){
+            document.querySelector(UISelectors.itemNameInput).value = '';
+            document.querySelector(UISelectors.itemCaloriesInput).value = '';
+
+        },
         getSelectors: function(){
             return UISelectors;
         }
