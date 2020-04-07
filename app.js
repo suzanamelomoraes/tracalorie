@@ -62,8 +62,8 @@ const UICtrl = (function(){
         },
         getItemInput: function(){
             return {
-                name:document.querySelector(UISelectors.itemNameInput.value),
-                calories:document.querySelector(UISelectors.itemCaloriesInput.value)
+                name: document.querySelector(UISelectors.itemNameInput).value,
+                calories: document.querySelector(UISelectors.itemCaloriesInput).value
             }
         },
         getSelectors: function(){
@@ -78,7 +78,7 @@ const UICtrl = (function(){
 // App Controller
 const AppCtrl = (function(ItemCtrl, UICtrl){
     // Load event listeners
-    const loadEventListeners = () => {
+    const loadEventListeners = function() {
         // Get UI selectors
         const UISelectors = UICtrl.getSelectors();
 
@@ -87,9 +87,16 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
     }
 
     // Add item submit
-    const itemAddSubmit = (e) => {
+    const itemAddSubmit = function(e) {
         // get form input from UI Controller
         const input = UICtrl.getItemInput();
+        
+        // Check for name and calorie input
+        if(input.name !== '' && input.calories !== ''){
+           // Add item
+           const newItem = ItemCtrl.addItem(input.name, input.calories);
+        }
+
         e.preventDefault();
     }
 
