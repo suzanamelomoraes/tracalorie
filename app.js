@@ -56,6 +56,9 @@ const UICtrl = (function(){
             });
             // Insert list items
             document.querySelector(UISelectors.itemList).innerHTML = html;
+        },
+        getSelectors: function(){
+            return UISelectors;
         }
     }
    
@@ -67,7 +70,7 @@ const UICtrl = (function(){
 const AppCtrl = (function(ItemCtrl, UICtrl){
     // Load event listeners
     const loadEventListeners = () => {
-        
+
     }
 
     // Public methods
