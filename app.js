@@ -151,6 +151,7 @@ const UICtrl = (function(){
         addItemToForm: function(){
             document.querySelector(UISelectors.itemNameInput).value = ItemCtrl.getCurrentItem().name;
             document.querySelector(UISelectors.itemCaloriesInput).value = ItemCtrl.getCurrentItem().calories;
+            UICtrl.showEditState();
         },
         hideList: function(){
             document.querySelector(UISelectors.itemList).style.display = 'none';
