@@ -76,6 +76,7 @@ const UICtrl = (function(){
         addBtn: '.add-btn',
         updateBtn: '.update-btn',
         deleteBtn: '.delete-btn',
+        backBtn: '.back-btn',
         itemNameInput: '#item-name',
         itemCaloriesInput: '#item-calories',
         totalCalories: '.total-calories'
@@ -133,6 +134,10 @@ const UICtrl = (function(){
         },
         clearEditState: function(){
             UICtrl.clearInput();
+            document.querySelector(UISelectors.updateBtn).style.display = 'none';
+            document.querySelector(UISelectors.deleteBtn).style.display = 'none';
+            document.querySelector(UISelectors.backBtn).style.display = 'none';
+            document.querySelector(UISelectors.addBtn).style.display = 'inline';
 
         },
         getSelectors: function(){
