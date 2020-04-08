@@ -47,9 +47,23 @@ const ItemCtrl = (function(){
 
         return newItem;
        },
+       getItemById: function(id){
+            let idFound = null;
+
+            // Loop through items to find the selected id
+
+            data.items.forEach(item =>{
+                if(item.id === id){
+                    idFound = item;
+                }
+            })
+            return idFound;
+
+
+       },
        getTotalCalories: function(){
            let total = 0;
-        
+
            // Loop through items and add calories
            data.items.forEach(item => {
                total += item.calories;
@@ -186,6 +200,26 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
            UICtrl.clearInput();
         }
 
+        e.preventDefault();
+    }
+
+    // Update item submit
+    const itemUpdateSubmit = function(e){
+        if(e.target.classList.contains('edit-item')){
+            // Get list item id
+            const listId = e.target.parentNode.parentNode.id;
+
+            // Break into an array
+            const listIdArray = listId.split('-');
+
+            // Get the actual id
+            const id = parseInt(listIdArray[1]);
+
+            // Get item
+            const itemToEdit = ItemCtrl.getItemById(id);
+            console.log(itemToEdit)
+        }
+        
         e.preventDefault();
     }
 
