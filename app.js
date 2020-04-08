@@ -48,18 +48,20 @@ const ItemCtrl = (function(){
         return newItem;
        },
        getItemById: function(id){
-            let idFound = null;
-
             // Loop through items to find the selected id
+        
+            // let idFound = null;
+            // data.items.forEach(item =>{
+            //     if(item.id === id){
+            //         idFound = item;
+            //     }
+            // })
+            // return idFound;
 
-            data.items.forEach(item =>{
-                if(item.id === id){
-                    idFound = item;
-                }
+            let idFound = data.items.find(item => {
+                return item.id === id
             })
             return idFound;
-
-
        },
        getTotalCalories: function(){
            let total = 0;
