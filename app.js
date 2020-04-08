@@ -158,6 +158,9 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
 
         // Add item event
         document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
+
+        // Edit icon click event- Select the list ID itself as the icon is generated dinamically by JS
+        document.querySelector(UISelectors.itemList).addEventListener('click', itemUpdateSubmit);
     }
 
     // Add item submit
