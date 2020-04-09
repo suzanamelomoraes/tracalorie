@@ -193,7 +193,7 @@ const UICtrl = (function(){
         showTotalCalories: function(totalCalories){
             document.querySelector(UISelectors.totalCalories).textContent = totalCalories;
         },
-        setEditState: function(){
+        clearEditState: function(){
             UICtrl.clearInput();
             document.querySelector(UISelectors.updateBtn).style.display = 'none';
             document.querySelector(UISelectors.deleteBtn).style.display = 'none';
@@ -301,8 +301,16 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
         const updatedItem = ItemCtrl.updateItem(input.name, input.calories);
 
         // Update UI
-
         UICtrl.updateListItem(updatedItem);
+
+        // Get total calories
+        const totalCalories = ItemCtrl.getTotalCalories();
+
+        // Add total calories to UI
+        UICtrl.showTotalCalories(totalCalories);
+
+        // Clear edit state
+        UICtrl.clearEditState();
 
         e.preventDefault();
     }
@@ -310,8 +318,8 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
     // Public methods
     return {
         init: function(){
-            // Set initial state - Clear edit state
-            UICtrl.setEditState();
+            // Set to initial state - Clear edit state
+            UICtrl.clearEditState();
             
             // Fetch items from data structure (Item Controller)
             const items = ItemCtrl.getItems();
