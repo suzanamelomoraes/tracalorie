@@ -193,6 +193,14 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
         // Add item event
         document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
 
+        // Disable submit on enter
+        document.addEventListener('keypress', function(e){
+            if(e.keyCode === 13 || e.which === 13){
+                e.preventDefault();
+                return false;
+            }
+        })
+
         // Edit icon click event- Select the list ID itself as the icon is generated dinamically by JS
         document.querySelector(UISelectors.itemList).addEventListener('click', itemEditClick);
 
@@ -248,6 +256,11 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
             UICtrl.addItemToForm();
         }
         
+        e.preventDefault();
+    }
+
+    const itemUpdateSubmit = function(e){
+
         e.preventDefault();
     }
 
