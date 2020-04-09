@@ -282,6 +282,10 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
         // Update item
         const updatedItem = ItemCtrl.updateItem(input.name, input.calories);
 
+        // Update UI
+
+        UICtrl.updateListItem(updateItem);
+
         e.preventDefault();
     }
 
