@@ -63,6 +63,22 @@ const ItemCtrl = (function(){
             })
             return idFound;
        },
+       updateItem: function(name, calories){
+            // Calories to number
+            calories = parseInt(calories);
+
+            let itemFound = null;
+
+            data.items.forEach(function(item){
+                if(item.id === data.currentItem.id){
+                    item.name = name;
+                    item.calories = calories;
+                    itemFound = item;
+                }
+            });
+
+            return itemFound;
+       },
        setCurrentItem: function(item){
             data.currentItem = item;
        },
@@ -240,7 +256,7 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
             // Get list item id
             const listId = e.target.parentNode.parentNode.id;
 
-            // Break into an array
+            // Break into an array        console.log('update')
             const listIdArray = listId.split('-');
 
             // Get the actual id
