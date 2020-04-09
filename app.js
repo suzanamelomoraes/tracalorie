@@ -111,6 +111,7 @@ const ItemCtrl = (function(){
 const UICtrl = (function(){
     const UISelectors = {
         itemList: '#item-list',
+        listItems: '#item-list li',
         addBtn: '.add-btn',
         updateBtn: '.update-btn',
         deleteBtn: '.delete-btn',
@@ -159,6 +160,9 @@ const UICtrl = (function(){
                             </a>`
             // Insert item
             document.querySelector(UISelectors.itemList).insertAdjacentElement('beforeend', li);
+        },
+        updateListItem: function(updatedItem){
+
         },
         clearInput: function(){
             document.querySelector(UISelectors.itemNameInput).value = '';
