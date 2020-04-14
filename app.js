@@ -321,6 +321,17 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
         e.preventDefault();
     }
 
+    // Delete button event
+    const itemDeleteSubmit = function(e){
+        // Get current item
+        const currentItem = ItemCtrl.getCurrentItem();
+
+        // Delete from data structure
+        ItemCtrl.deleteItem(currentItem.id);
+
+        e.preventDefault();
+    }
+
     // Public methods
     return {
         init: function(){
