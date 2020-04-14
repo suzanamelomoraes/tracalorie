@@ -124,7 +124,7 @@ const UICtrl = (function(){
         itemList: '#item-list',
         listItems: '#item-list li',
         addBtn: '.add-btn',
-        updateBtn: '.update-btn',
+        updateBtn: '.update-btn',clear-btn
         deleteBtn: '.delete-btn',
         backBtn: '.back-btn',
         clearBtn: '.clear-btn',
@@ -263,6 +263,9 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
 
         // Back button event
         document.querySelector(UISelectors.backBtn).addEventListener('click', UICtrl.clearEditState);
+
+        // Clear items event
+        document.querySelector(UISelectors.clearBtn).addEventListener('click', clearAllItemsClick);
     }
 
     // Add item submit
