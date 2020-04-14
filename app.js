@@ -90,6 +90,9 @@ const ItemCtrl = (function(){
            data.items.splice(index, 1);
 
        },
+       clearAllItems: function(){
+           data.items = [];
+       },
        setCurrentItem: function(item){
             data.currentItem = item;
        },
@@ -124,7 +127,7 @@ const UICtrl = (function(){
         itemList: '#item-list',
         listItems: '#item-list li',
         addBtn: '.add-btn',
-        updateBtn: '.update-btn',clear-btn
+        updateBtn: '.update-btn',
         deleteBtn: '.delete-btn',
         backBtn: '.back-btn',
         clearBtn: '.clear-btn',
