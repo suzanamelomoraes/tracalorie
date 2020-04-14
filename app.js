@@ -202,6 +202,16 @@ const UICtrl = (function(){
             document.querySelector(UISelectors.itemNameInput).value = '';
             document.querySelector(UISelectors.itemCaloriesInput).value = '';
         },
+        removeAllItems: function(){
+            let listItems = document.querySelectorAll(UISelectors.listItems);
+
+            // Turn Node list into array
+            listItems = Array.from(listItems);
+
+            listItems.forEach(function(item){
+                item.remove();
+            });
+        },
         addItemToForm: function(){
             document.querySelector(UISelectors.itemNameInput).value = ItemCtrl.getCurrentItem().name;
             document.querySelector(UISelectors.itemCaloriesInput).value = ItemCtrl.getCurrentItem().calories;
