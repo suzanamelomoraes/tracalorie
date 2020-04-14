@@ -1,4 +1,14 @@
 // Storage Controller
+const StorageCtrl = (function(){
+
+    // Public methods
+    return {
+        storeItem: function(){
+
+        }
+    }
+})();
+
 
 
 // Item Controller
@@ -248,7 +258,7 @@ const UICtrl = (function(){
 
 
 // App Controller
-const AppCtrl = (function(ItemCtrl, UICtrl){
+const AppCtrl = (function(ItemCtrl, StorageCtrl, UICtrl){
     // Load event listeners
     const loadEventListeners = function() {
         // Get UI selectors
@@ -425,6 +435,6 @@ const AppCtrl = (function(ItemCtrl, UICtrl){
         }
     }
    
-})(ItemCtrl, UICtrl);
+})(ItemCtrl, StorageCtrl, UICtrl);
 
 AppCtrl.init();
