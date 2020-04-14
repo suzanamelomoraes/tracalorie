@@ -310,6 +310,9 @@ const AppCtrl = (function(ItemCtrl, StorageCtrl, UICtrl){
            // Add total calories to UI
            UICtrl.showTotalCalories(totalCalories);
 
+           // Store in localStorage
+           StorageCtrl.storeItem(newItem);
+
            // Clear fields
            UICtrl.clearInput();
         }
