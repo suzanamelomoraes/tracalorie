@@ -4,7 +4,7 @@ const StorageCtrl = (function(){
     // Public methods
     return {
         storeItem: function(item){
-            let items = [];
+            let items;
 
             // Check if there are any items in ls
             if(localStorage.getItem('items') === null){
@@ -21,6 +21,15 @@ const StorageCtrl = (function(){
                 // Re set ls
                 localStorage.setItem('items', JSON.stringify(items));
             }
+        },
+        getItemsFromStorage: function(){
+            let items;
+            if(localStorage.getItem('items') === null){
+                items = [];
+            } else {
+                items = JSON.parse(localStorage.getItem('items'));
+            }
+            return items;
         }
     }
 })();
