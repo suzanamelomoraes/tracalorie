@@ -79,6 +79,17 @@ const ItemCtrl = (function(){
 
             return itemFound;
        },
+       deleteItem: function(id){
+           // Get ids
+           const ids = data.items.map(function(item){
+               return item.id;
+           });
+           // Get index
+           const index = ids.indexOf(id);
+
+           data.items.splice(index, 1);
+
+       },
        setCurrentItem: function(item){
             data.currentItem = item;
        },
