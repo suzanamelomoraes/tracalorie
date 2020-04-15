@@ -30,6 +30,19 @@ const StorageCtrl = (function(){
                 items = JSON.parse(localStorage.getItem('items'));
             }
             return items;
+        },
+        updateItemStorage: function(updatedItem){
+            // Get items
+            let items = JSON.parse(localStorage.getItem('items'));
+
+            // Find item to be updated and replace data
+            items.forEach(function(item, index){
+                if(updatedItem.id === item.id){
+                    items.splice(index, 1, updatedItem);
+                }
+            });
+            // Re set local storage
+            localStorage.setItem('items', JSON.stringify(items));
         }
     }
 })();
