@@ -371,6 +371,7 @@ const AppCtrl = (function(ItemCtrl, StorageCtrl, UICtrl){
         e.preventDefault();
     }
 
+    // Update item submit
     const itemUpdateSubmit = function(e){
         // get item input
         const input = UICtrl.getItemInput();
@@ -386,6 +387,9 @@ const AppCtrl = (function(ItemCtrl, StorageCtrl, UICtrl){
 
         // Add total calories to UI
         UICtrl.showTotalCalories(totalCalories);
+
+        // Update local storage
+        StorageCtrl.updateItemStorage(updatedItem);
 
         // Clear edit state
         UICtrl.clearEditState();
