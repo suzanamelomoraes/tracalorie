@@ -426,6 +426,9 @@ const AppCtrl = (function(ItemCtrl, StorageCtrl, UICtrl){
 
         // Add total calories to UI
         UICtrl.showTotalCalories(totalCalories);
+
+        // Delete item from local storage
+        StorageCtrl.deleteItemFromStorage(currentItem.id);
         
         // Clear edit state
         UICtrl.clearEditState();
